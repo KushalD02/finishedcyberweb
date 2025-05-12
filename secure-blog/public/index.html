@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Secure Blog</title>
+  <script type="module" src="js/auth.js" defer></script>
+  <script type="module" src="js/posts.js" defer></script>
+  <script type="module" src="js/2fa.js" defer></script> <!-- 2FA logic -->
+</head>
+<body>
+  <h1>Secure Blog</h1>
+
+  <h2>Register</h2>
+  <form id="register-form">
+    <input type="email" id="register-email" placeholder="Email" />
+    <input type="password" id="register-password" placeholder="Password" />
+    <button type="submit" disabled>Register</button>
+  </form>
+
+  <h2>Login</h2>
+  <form id="login-form">
+    <input type="email" id="login-email" placeholder="Email" />
+    <input type="password" id="login-password" placeholder="Password" />
+    <button type="submit" disabled>Login</button>
+  </form>
+
+  <h2>Enable 2FA</h2>
+  <button id="setup-2fa" disabled>Generate 2FA QR</button>
+  <br /><br />
+  <img id="qr-code" style="display: none; max-width: 200px;" />
+  <p>Manual Key: <span id="manual-key"></span></p>
+
+  <h2>Verify 2FA</h2>
+  <form id="2fa-form">
+    <input type="email" id="2fa-email" placeholder="Your Email" />
+    <input type="text" id="2fa-token" placeholder="Enter 6-digit code" />
+    <button id="verify-2fa" type="submit" disabled>Verify</button>
+  </form>
+
+  <h2>Create Post</h2>
+  <form id="post-form">
+    <input type="text" id="post-title" placeholder="Title" />
+    <textarea id="post-content" placeholder="Content"></textarea>
+    <button type="submit" disabled>Create</button>
+  </form>
+
+  <h2>Latest Posts</h2>
+  <section id="postsList"></section>
+</body>
+</html>
